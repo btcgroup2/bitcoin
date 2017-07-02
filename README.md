@@ -1,4 +1,4 @@
-Bitcoin Core integration/staging tree
+防止重放攻击底层代码开发
 =====================================
 
 [![Build Status](https://travis-ci.org/bitcoin/bitcoin.svg?branch=master)](https://travis-ci.org/bitcoin/bitcoin)

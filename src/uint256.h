@@ -26,12 +26,11 @@ public:
     {
         memset(data, 0, sizeof(data));
     }
-    /** 取反 add by yushunan */
-    void negate(){
-        for(int i=0;i<WIDTH;i++){
-            data[i]=~data[i];
-        }
-    }
+    // void negate(){
+    //     for(int i=0;i<WIDTH;i++){
+    //         data[i]=~data[i];
+    //     }
+    // }
 
     explicit base_blob(const std::vector<unsigned char>& vch);
 

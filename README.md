@@ -42,7 +42,8 @@ docker技术的使用
 为了解决多节点的测试问题，采用当前流行的docke技术。
 著名的Hyperledger的fabric项目(由IBM主导的)，就用了容器技术进行网络隔离。
 本次开发虚拟化了6个节点(2个bitcoin的源代码节点，2个硬分叉节点和2个防攻击节点)
-具体如下图所示
+
+.所有节点的部署如下图所示:
 ![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
 

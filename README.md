@@ -44,17 +44,18 @@ docker技术的使用
 本次开发虚拟化了6个节点(2个bitcoin的源代码节点，2个硬分叉节点和2个防攻击节点)
 
 #### 1.所有镜像都上传到了docker hub 上，大家可以随时下载，下载命令如下:
->
-
+>docker pull xuxinlai2002/btcnew
+>docker pull xuxinlai2002/btchardfork
+>docker pull xuxinlai2002/btcorg
 ![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
-#### 1.通过可以以下命令查看所有j:
+#### 2.通过可以以下命令查看所有j:
 >doc
-![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
+![d2](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
-#### 1.通过可以以下命令查看所有容器:
+#### 3.通过可以以下命令查看所有容器:
 >docker ps
-![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
+![d3](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
-#### 2.在工作目录，通过可以一下命令重置环境(docker重启，数据归零):
+#### 4.在工作目录，通过可以一下命令重置环境(docker重启，数据归零):
 >resetAll

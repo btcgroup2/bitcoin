@@ -51,7 +51,7 @@ docker pull xuxinlai2002/btcorg
 ```
 ![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_hub.png)
 
-#### 2.通过可以以下命令查看所有镜像:
+#### 2.可以通过以下命令查看所有镜像:
 ```
 root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker# docker images
 REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
@@ -60,7 +60,7 @@ xuxinlai2002/btcnew        latest              47701325c0b2        2 days ago   
 xuxinlai2002/btchardfork   latest              06a5c890dda1        2 days ago          7.86 GB
 ```
 
-#### 3.通过可以以下命令查看所有容器:
+#### 3.可以通过以下命令查看所有容器:
 ```
 root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker# docker ps
 CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS               NAMES
@@ -71,6 +71,55 @@ ab2ba80bff53        xuxinlai2002/btchardfork   "sh -c 'bitcoind -reg"   10 minut
 84955fb307e8        xuxinlai2002/btcorg        "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btcorgNode2
 ed2d1223c275        xuxinlai2002/btcorg        "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btcorgNode1
 ```
+#### 4.在工作目录，可以通过以下命令清空上次的执行结果:
+```
+root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker# cleanAll
+da5c88d83f3e
+162954e0feac
+2907e68ad502
+ab2ba80bff53
+84955fb307e8
+ed2d1223c275
+```
 
-#### 4.在工作目录，通过可以一下命令重置环境(docker重启，数据归零):
->resetAll
+#### 5.在工作目录，可以通过以下命令自动配置docker环境:
+```
+root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker# setAll
+9581b304488f2d2b042d5f39b038e37a8666625c46eae02e0019ba7689d9fa01
+7c476428e7807267ab169f32c4e57f73bf39e6506aa71453954c2afe00c30857
+b1323bd91291ca7b8cf7057b32c72029af17f04bf0036c3bc5868ba096fdb443
+1d35b593c37281677d3723f51eb08e6b72b7cba2eb304223a0f822c8578e8a39
+2124409a8df4a52eddd1c7acc2a38251e2cd0701d7ee4e4eb725a8902feed141
+e74fa0d9398c7d7732dc1726d45445737ac7b0d6f2cb2010b775c65846a90c74
+```
+
+#### 6.在工作目录，可以通过以下命令重置环境(docker重启，数据归零):
+```
+root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker# resetAll
+/root/mydocker
+e74fa0d9398c
+2124409a8df4
+1d35b593c372
+b1323bd91291
+7c476428e780
+9581b304488f
+e2cbc3d893942329ccdeb514eb97d116838a297443681b5c5f3cb11730c8181d
+d95f254c75686e086c6d45827438c346e5166434704e6e2f51dbd4c40462ba21
+58df1c5e832aac2463f3d6a28e81865677eac6986fe9c91b8812893c3c84bf67
+01ae29ac4832b87fed5d865e38c57704708f98fa170eac5b93ba4ac0a0379d65
+076938e94aca1109dc690639f3775b74a6def6a6edda092b4d666ccfcbaf7e5f
+272e228f0a94e474595e1f789d118624cfb1c86cb35ad70e1c215719acc4ba42
+```
+
+#### 7.以下目录是所有docker执行，所需要的自动化脚本:
+```
+root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker/tools# ll
+total 24
+drwxr-xr-x  2 root root 4096 Jul 10 21:42 ./
+drwxr-xr-x 10 root root 4096 Jul 10 21:04 ../
+-rwxrwxrwx  1 root root  328 Jul 10 16:43 cleanAll*
+-rwxrwxrwx  1 root root   31 Jul 10 15:34 resetAll*
+-rwxrwxrwx  1 root root  294 Jul 10 16:37 setAll*
+-rwxrwxrwx  1 root root  705 Jul  9 23:28 startNodes*
+```
+

@@ -39,5 +39,10 @@ node1发起多笔交易生成区块（保证区块大小超过2k）,此区块测
 
 docker技术的使用
 -------
-![61](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
+为了解决多节点的测试问题，采用当前流行的docke技术。
+著名的Hyperledger的fabric项目(由IBM主导的)，就用了容器技术进行网络隔离。
+本次开发虚拟化了6个节点(2个bitcoin的源代码节点，2个硬分叉节点和2个防攻击节点)
+具体如下图所示
+![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
+
 

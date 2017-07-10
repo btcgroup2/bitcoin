@@ -45,8 +45,11 @@ docker技术的使用
 
 #### 1.所有镜像都上传到了docker hub 上，大家可以随时下载，下载命令如下:
 >docker pull xuxinlai2002/btcnew
+>
 >docker pull xuxinlai2002/btchardfork
+>
 >docker pull xuxinlai2002/btcorg
+
 ![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
 #### 2.通过可以以下命令查看所有j:

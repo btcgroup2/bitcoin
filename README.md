@@ -44,7 +44,7 @@ docker技术的使用
 本次开发虚拟化了6个节点(2个bitcoin的源代码节点，2个硬分叉节点和2个防攻击节点)
 
 #### 1.所有镜像都上传到了docker hub 上，大家可以随时下载，下载命令如下:
->docker pull xuxinlai2002/btcnew <br>
+>docker pull xuxinlai2002/btcnew 
 >docker pull xuxinlai2002/btchardfork
 >docker pull xuxinlai2002/btcorg
 

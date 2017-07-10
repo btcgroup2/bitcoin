@@ -39,5 +39,5 @@ node1发起多笔交易生成区块（保证区块大小超过2k）,此区块测
 
 docker技术的使用
 -------
-![61](http://chuantu.biz/t5/131/1499690034x1729546479.png)
+![61](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 

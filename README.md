@@ -48,23 +48,29 @@ docker技术的使用
 docker pull xuxinlai2002/btcnew
 docker pull xuxinlai2002/btchardfork 
 docker pull xuxinlai2002/btcorg
+```
+![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_hub.png)
 
+#### 2.通过可以以下命令查看所有镜像:
+```
 root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker# docker images
 REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
 xuxinlai2002/btcorg        latest              36947581fdb1        44 hours ago        2.73 GB
 xuxinlai2002/btcnew        latest              47701325c0b2        2 days ago          5.872 GB
 xuxinlai2002/btchardfork   latest              06a5c890dda1        2 days ago          7.86 GB
-
 ```
-![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
-
-#### 2.通过可以以下命令查看所有j:
->doc
-![d2](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
 #### 3.通过可以以下命令查看所有容器:
->docker ps
-![d3](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
+```
+root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker# docker ps
+CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS               NAMES
+da5c88d83f3e        xuxinlai2002/btcnew        "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btcnewNode2
+162954e0feac        xuxinlai2002/btcnew        "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btcnewNode1
+2907e68ad502        xuxinlai2002/btchardfork   "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btchardforkNode2
+ab2ba80bff53        xuxinlai2002/btchardfork   "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btchardforkNode1
+84955fb307e8        xuxinlai2002/btcorg        "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btcorgNode2
+ed2d1223c275        xuxinlai2002/btcorg        "sh -c 'bitcoind -reg"   10 minutes ago      Up 10 minutes       18444/tcp           btcorgNode1
+```
 
 #### 4.在工作目录，通过可以一下命令重置环境(docker重启，数据归零):
 >resetAll

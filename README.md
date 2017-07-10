@@ -43,7 +43,17 @@ docker技术的使用
 著名的Hyperledger的fabric项目(由IBM主导的)，就用了容器技术进行网络隔离。
 本次开发虚拟化了6个节点(2个bitcoin的源代码节点，2个硬分叉节点和2个防攻击节点)
 
-#### 1.所有节点的部署如下图所示:
+#### 1.所有镜像都上传到了docker hub 上，大家可以随时下载，下载命令如下:
+>
+
+![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
+
+#### 1.通过可以以下命令查看所有j:
+>doc
+![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
+
+#### 1.通过可以以下命令查看所有容器:
+>docker ps
 ![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
 #### 2.在工作目录，通过可以一下命令重置环境(docker重启，数据归零):

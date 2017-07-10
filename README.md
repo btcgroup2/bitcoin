@@ -46,4 +46,5 @@ docker技术的使用
 #### 1.所有节点的部署如下图所示:
 ![d1](https://github.com/btcgroup2/bitcoin/blob/master/share/docker_ps.png)
 
-
+#### 2.在工作目录，通过可以一下命令重置环境(docker重启，数据归零):
+>resetAll

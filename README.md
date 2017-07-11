@@ -15,14 +15,14 @@ https://github.com/btcgroup2/bitcoin
 license
 -------
 
-MIT license. 欢迎大家多多交流
+本项目按照 MIT license 协议. 欢迎大家多多交流
 具体请参考 https://opensource.org/licenses/MIT.
 
 
 环境搭建
 ------------------
 
-本次开发主要是在比特币源码的基础上，进行项目的开发测试，其中在比特币regtest网络了，搭建了测试用区块链。
+本次开发主要是在比特币源码的基础上，进行项目的开发测试，其中在比特币regtest网络上，搭建了测试用区块链。
 环境的具体搭建过程如下：
 
 #### 1.比特币源码编译准备命令如下:

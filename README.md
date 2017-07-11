@@ -100,7 +100,7 @@ node1发起多笔交易生成区块（保证区块大小超过2k）,此区块测
 下一步node1再发起交易，node2生成区块，测试结果，交易被包含到区块中，证明node2可被攻击
 此区块被node2发布到网络，node3不接受此区块，证明node3可以阻止重放攻击。
 
-测试结果参考 https://github.com/btcgroup2/bitcoin/blob/master/share/20170707%E6%B5%8B%E8%AF%95.pdf
+[测试文档](https://github.com/btcgroup2/bitcoin/blob/master/share/20170707%E6%B5%8B%E8%AF%95.pdf)
 
 docker技术的使用
 -------

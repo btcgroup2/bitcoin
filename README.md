@@ -18,6 +18,51 @@ license
 MIT license. 欢迎大家多多交流
 具体请参考 https://opensource.org/licenses/MIT.
 
+
+环境搭建
+------------------
+
+本次开发主要是在比特币源码的基础上，进行项目的开发测试，其中在比特币regtest网络了，搭建了测试用区块链。
+环境的具体搭建过程如下：
+
+#### 1.比特币源码编译准备命令如下:
+```
+./autogen.sh
+./configure --with-incompatible-bdb
+```
+
+#### 2.比特币源码编译命令如下:
+```
+make
+```
+#### 3.比特币源码安装命令如下:
+```
+make install
+```
+
+#### 4.配置私有链网络环境:
+```
+rpcuser=btc1
+rpcpassword=xxl12345
+addnode=60.205.162.88
+addnode=47.94.165.9
+whitelist=60.205.162.88
+whitelist=47.94.165.9
+```
+
+#### 5.区块网络链连接正常，命令如下:
+```
+root@iZ2zegchn2k04hhikcn4yjZ:~# netstat -pant
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+cp        0      0 0.0.0.0:18444           0.0.0.0:*               LISTEN      17569/bitcoind
+tcp        0      0 127.0.0.1:18332         0.0.0.0:*               LISTEN      17569/bitcoind
+tcp        0      0 172.17.246.239:58241    60.205.162.88:18444     ESTABLISHED 17569/bitcoind
+tcp6       0      0 :::18444                :::*                    LISTEN      17569/bitcoind
+```
+
+比特币源码安装参考 http://blog.csdn.net/rion_chen/article/details/51104727.
+
 开发流程
 -------------------
 

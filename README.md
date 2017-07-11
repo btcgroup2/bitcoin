@@ -64,9 +64,24 @@ tcp6       0      0 :::18444                :::*                    LISTEN      
 比特币源码安装参考 http://blog.csdn.net/rion_chen/article/details/51104727.
 
 开发流程
--------------------
+------------------
 
-。。。
+本次开发主要是在比特币源码的基础上，进行了二次开发，用于模拟在比特币网络硬分叉后的重放攻击的防止。
+环境的具体搭建过程如下：
+
+#### 1.签名算法的修改，代码片段如下
+```
+void negate(){
+  for(int i=0;i<WIDTH;i++){
+    data[i]=~data[i]
+  }
+}
+```
+
+#### 2.硬分叉的模拟，代码片段如下
+```
+static const unsigned int MAX_BLOCK_BASE_SIZE = 2000;
+```
 
 测试流程
 -------

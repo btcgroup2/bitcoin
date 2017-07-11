@@ -266,6 +266,9 @@ root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker/tests/log# ll
 -rw-r--r-- 1 root root 3291 Jul 10 23:22 test37.log
 -rw-r--r-- 1 root root 2449 Jul 11 00:19 transaction01.log
 ```
+docker测试脚本参考下面的连接
+[docker测试脚本]（https://github.com/btcgroup2/tools）
+[docker测试结果]（https://github.com/btcgroup2/tools/blob/master/脚本测试样例v4.pdf）
 
 开源社区计划
 ------------------

@@ -100,6 +100,7 @@ node1发起多笔交易生成区块（保证区块大小超过2k）,此区块测
 下一步node1再发起交易，node2生成区块，测试结果，交易被包含到区块中，证明node2可被攻击
 此区块被node2发布到网络，node3不接受此区块，证明node3可以阻止重放攻击。
 
+测试结果参考 https://github.com/btcgroup2/bitcoin/blob/master/share/20170707%E6%B5%8B%E8%AF%95.pdf
 
 docker技术的使用
 -------
@@ -186,4 +187,84 @@ drwxr-xr-x 10 root root 4096 Jul 10 21:04 ../
 -rwxrwxrwx  1 root root  294 Jul 10 16:37 setAll*
 -rwxrwxrwx  1 root root  705 Jul  9 23:28 startNodes*
 ```
+
+自动化测试脚本
+------------------
+
+分布式系统测试是一项比较繁琐的工作，为了在有限的时间内完成复制的测试，
+开发了自动化测试脚本，并且在docker的宿主机环境里，测试通过。
+这样可以提供测试效率，为以后的系统的持续集成打下基础
+
+
+#### 1.自动化测试脚本示例
+```
+imgs=("btcorg" "btchardfork" "btcnew")
+ctns=("1" "2")
+declare ctnNum=0
+
+#test instruction
+logInfo="transaction : send teansaction from $1 to $2 amount $3 "
+echo $logInfo | tee tests/log/$4.log
+
+address=`docker exec -it $2 bitcoin-cli -regtest getnewaddress`
+echo "address: $address" |tee -a tests/log/$4.log
+
+txid=`docker exec -it $1 bitcoin-cli -regtest sendtoaddress $address $3`
+echo "txid: $txid"|tee -a tests/log/$4.log
+
+for img in "${imgs[@]}"
+do
+  for ctn in "${ctns[@]}"
+  do
+        logInfo="nodes: ${img}Node$ctn, transaction info"
+        echo $logInfo | tee -a tests/log/$4.log
+
+        docker exec -it ${img}Node$ctn bitcoin-cli -regtest gettransaction $txid > temp.con
+        cat -v temp.con |tr -d "^M" |tee -a tests/log/$4.log
+  done
+done
+
+#docker exec -it $1 bitcoin-cli -regtest generate $2 > temp.con
+#cat -v temp.con |tr -d "^M" |tee -a tests/generate.log
+```
+
+
+#### 2.自动化测试脚本一览
+```
+root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker/tests# ll
+total 120
+-rwxr-xr-x  1 root root  659 Jul 10 22:58 confirmtx*
+-rwxr-xr-x  1 root root  667 Jul 10 23:29 confirmtx.save*
+-rwxr-xr-x  1 root root  336 Jul 10 21:40 generate*
+-rwxr-xr-x  1 root root  213 Jul 10 23:29 generate.save*
+-rwxr-xr-x  1 root root  556 Jul 10 20:24 getblockchaininfo*
+-rwxrwxrwx  1 root root  775 Jul 10 21:43 getinfo*
+-rwxrwxrwx  1 root root  658 Jul 10 16:27 test11*
+-rwxrwxrwx  1 root root  663 Jul 10 17:08 test12*
+-rwxrwxrwx  1 root root  648 Jul 10 17:07 test13*
+-rwxr-xr-x  1 root root  898 Jul 10 22:28 transaction*
+-rwxr-xr-x  1 root root  256 Jul 10 23:29 transaction.save*
+-rwxr-xr-x  1 root root  354 Jul 10 23:29 transaction.save.1*
+-rwxr-xr-x  1 root root  559 Jul 10 23:29 transaction.save.2*
+-rwxr-xr-x  1 root root  864 Jul 10 23:29 transaction.save.3*
+```
+
+#### 3.测试结果一览
+```
+root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker/tests/log# ll
+-rw-r--r-- 1 root root 4941 Jul 11 00:41 confirmtx11.log
+-rw-r--r-- 1 root root 7221 Jul 11 00:18 generate01.log
+-rw-r--r-- 1 root root 3199 Jul 11 00:11 getinfo01.log
+-rw-r--r-- 1 root root 3196 Jul 10 23:04 test11.log
+-rw-r--r-- 1 root root 7221 Jul 10 23:04 test12.log
+-rw-r--r-- 1 root root 3209 Jul 10 23:05 test13.log
+-rw-r--r-- 1 root root 2449 Jul 10 23:07 test21.log
+-rw-r--r-- 1 root root 4941 Jul 10 23:09 test25.log
+-rw-r--r-- 1 root root 3250 Jul 10 23:10 test28.log
+-rw-r--r-- 1 root root 1729 Jul 10 23:15 test31.log
+-rw-r--r-- 1 root root 4941 Jul 10 23:16 test33.log
+-rw-r--r-- 1 root root 3291 Jul 10 23:22 test37.log
+-rw-r--r-- 1 root root 2449 Jul 11 00:19 transaction01.log
+```
+
 

@@ -269,6 +269,7 @@ root@iZ2ze4wxzv9g5i5r69vu06Z:~/mydocker/tests/log# ll
 docker测试脚本参考的连接
 [docker测试脚本](https://github.com/btcgroup2/tools)
 [docker测试结果](https://github.com/btcgroup2/tools/blob/master/脚本测试样例v4.pdf)
+[docker测试日志](https://github.com/btcgroup2/test-log)
 
 
 开源社区计划

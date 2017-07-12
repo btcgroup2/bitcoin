@@ -1,7 +1,8 @@
 防止重放攻击底层代码开发
 =====================================
 
-https://github.com/btcgroup2/bitcoin
+[源代码链接](https://github.com/btcgroup2/bitcoin)
+[防止重放攻击白皮书](https://github.com/btcgroup2/bitcoin/blob/master/share/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%98%B2%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB%E6%8A%80%E6%9C%AF%E7%99%BD%E7%9A%AE%E4%B9%A6.pdf)
 
 什么是重放攻击
 ----------------
